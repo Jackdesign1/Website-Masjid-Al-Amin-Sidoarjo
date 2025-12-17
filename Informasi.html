@@ -16,47 +16,41 @@
 
 <body class="bg-gray-50">
 
-<!-- ================= NAVBAR ================= -->
-<nav class="bg-white shadow-md fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
-        <!-- Logo -->
-        <div class="flex items-center gap-6">
-            <img src="Picture/Logo.png" class="w-12 h-12 flex-shrink-0" alt="Logo Muhammadiyah">
-            <div>
-                <h1 class="text-lg font-bold text-gray-900 leading-tight">
-                    Pimpinan Ranting Muhammadiyah
-                </h1>
-                <p class="text-sm text-gray-600 font-medium">
-                    Desa Ngampelsari
-                </p>
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <img src="Picture/Logo.png" class="w-12 h-12 flex-shrink-0" alt="Logo Muhammadiyah">
+                <div>
+                    <h1 class="text-lg font-bold text-gray-900 leading-tight">
+                        Pimpinan Ranting Muhammadiyah
+                    </h1>
+                    <p class="text-sm text-gray-600 font-medium">
+                        Desa Ngampelsari
+                    </p>
+                </div>
             </div>
+    
+            <ul class="hidden md:flex gap-10 text-gray-800 font-medium">
+                <li><a href="index.html" class="hover:text-emerald-700 transition">Home</a></li>
+                <li><a href="index.html#profil" class="hover:text-emerald-700 transition">Profil</a></li>
+                <li><a href="Informasi.html" class="hover:text-emerald-700 transition">Transparansi</a></li>
+                <li><a href="Kajian.html" class="text-emerald-700 font-bold transition">Kajian</a></li>
+                <li><a href="index.html#kontak" class="hover:text-emerald-700 transition">Kontak</a></li>
+            </ul>
+    
+            <button id="menuBtn" class="md:hidden text-gray-800 text-2xl focus:outline-none">☰</button>
         </div>
-
-        <!-- Menu Desktop -->
-        <ul class="hidden md:flex gap-10 text-gray-800 font-medium">
-            <li><a href="index.html" class="hover:text-emerald-700 transition">Home</a></li>
-            <li><a href="index.html#profil" class="hover:text-emerald-700 transition">Profil</a></li>
-            <li><a href="transparansi.html" class="hover:text-emerald-700 transition">Transparansi</a></li>
-            <li><a href="index.html#kajian" class="hover:text-emerald-700 transition">Kajian</a></li>
-            <li><a href="index.html#kontak" class="hover:text-emerald-700 transition">Kontak</a></li>
-        </ul>
-
-        <!-- Mobile Button -->
-        <button id="menuBtn" class="md:hidden text-gray-800 text-2xl focus:outline-none">☰</button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
-        <ul class="space-y-3 font-medium text-gray-800 px-6 py-4">
-            <li><a href="index.html" class="block hover:text-emerald-700 transition py-2">Home</a></li>
-            <li><a href="index.html#profil" class="block hover:text-emerald-700 transition py-2">Profil</a></li>
-            <li><a href="transparansi.html" class="block hover:text-emerald-700 transition py-2">Transparansi</a></li>
-            <li><a href="index.html#kajian" class="block hover:text-emerald-700 transition py-2">Kajian</a></li>
-            <li><a href="index.html#kontak" class="block hover:text-emerald-700 transition py-2">Kontak</a></li>
-        </ul>
-    </div>
-</nav>
+    
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <ul class="space-y-3 font-medium text-gray-800 px-6 py-4">
+                <li><a href="index.html" class="block hover:text-emerald-700 transition py-2">Home</a></li>
+                <li><a href="index.html#profil" class="block hover:text-emerald-700 transition py-2">Profil</a></li>
+                <li><a href="Informasi.html" class="block hover:text-emerald-700 transition py-2">Transparansi</a></li>
+                <li><a href="Kajian.html" class="block text-emerald-700 font-bold py-2">Kajian</a></li>
+                <li><a href="index.html#kontak" class="block hover:text-emerald-700 transition py-2">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
 
 <script>
     const menuBtn = document.getElementById('menuBtn');

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajian & Dakwah - PRM Ngampelsari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .hero-gradient { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
+        
+        .video-embed-container {
+            width: 100%;
+            height: 12rem; /* 192px */
+            overflow: hidden;
+        }
+        .video-embed-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Style untuk Tabel Responsif */
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .kajian-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; /* Jarak antar baris */
+        }
+        .kajian-table th, .kajian-table td {
+            padding: 1rem;
+            text-align: left;
+        }
+        .kajian-table th {
+            background-color: #f3f4f6; /* gray-100 */
+            font-weight: 600;
+            color: #1f2937; /* gray-800 */
+            border-bottom: 2px solid #059669;
+            position: sticky;
+            top: 0;
+        }
+        .kajian-table tbody tr {
+            background-color: #ffffff;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+        }
+        .kajian-table tbody tr:hover {
+            background-color: #ecfdf5; /* emerald-50 */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <img src="Picture/Logo.png" class="w-12 h-12 flex-shrink-0" alt="Logo Muhammadiyah">
+                <div>
+                    <h1 class="text-lg font-bold text-gray-900 leading-tight">
+                        Pimpinan Ranting Muhammadiyah
+                    </h1>
+                    <p class="text-sm text-gray-600 font-medium">
+                        Desa Ngampelsari
+                    </p>
+                </div>
+            </div>
+    
+            <ul class="hidden md:flex gap-10 text-gray-800 font-medium">
+                <li><a href="index.html" class="hover:text-emerald-700 transition">Home</a></li>
+                <li><a href="index.html#profil" class="hover:text-emerald-700 transition">Profil</a></li>
+                <li><a href="Informasi.html" class="hover:text-emerald-700 transition">Transparansi</a></li>
+                <li><a href="Kajian.html" class="text-emerald-700 font-bold transition">Kajian</a></li>
+                <li><a href="index.html#kontak" class="hover:text-emerald-700 transition">Kontak</a></li>
+            </ul>
+    
+            <button id="menuBtn" class="md:hidden text-gray-800 text-2xl focus:outline-none">☰</button>
+        </div>
+    
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <ul class="space-y-3 font-medium text-gray-800 px-6 py-4">
+                <li><a href="index.html" class="block hover:text-emerald-700 transition py-2">Home</a></li>
+                <li><a href="index.html#profil" class="block hover:text-emerald-700 transition py-2">Profil</a></li>
+                <li><a href="Informasi.html" class="block hover:text-emerald-700 transition py-2">Transparansi</a></li>
+                <li><a href="Kajian.html" class="block text-emerald-700 font-bold py-2">Kajian</a></li>
+                <li><a href="index.html#kontak" class="block hover:text-emerald-700 transition py-2">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('nav')) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>
+
+<section class="hero-gradient text-white pt-28 pb-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            📚 Kajian & Dakwah
+        </h1>
+        <p class="text-2xl mb-4 font-semibold">
+            Kaji Islam Berkemajuan Bersama Ulama Terpercaya
+        </p>
+        <p class="text-white/90 max-w-2xl mx-auto text-lg">
+            Setiap minggunya PRM Ngampelsari menghadirkan kajian mendalam dengan pembicara berpengalaman. Dari tafsir Al-Qur'an, hadis, hingga isu kontemporer Islam.
+        </p>
+    </div>
+</section>
+
+<section id="jadwal" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            <span class="gradient-text">Jadwal Kajian Desember 2025</span>
+        </h2>
+        <p class="text-gray-600">Daftar lengkap kajian bulan ini di Masjid Al-Amin</p>
+    </div>
+
+    <div class="table-responsive">
+        <table id="kajianContainer" class="kajian-table">
+            <thead>
+                <tr>
+                    <th class="w-1/4 rounded-tl-xl">Hari & Tanggal</th>
+                    <th class="w-1/4">Materi</th>
+                    <th class="w-1/4">Pemateri</th>
+                    <th class="w-1/4 rounded-tr-xl">Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+    
+    <div id="noJadwal" class="hidden text-center text-xl text-gray-500 mt-10">
+        <p>Belum ada jadwal kajian untuk bulan ini.</p>
+    </div>
+</section>
+
+<section id="dokumentasi" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                <span class="gradient-text">Dokumentasi Video Kajian</span>
+            </h2>
+            <p class="text-gray-600 text-lg">
+                Belajar Kapan Saja - Tonton Kembali Video Kajian
+            </p>
+        </div>
+
+        <div class="mb-8 flex flex-col md:flex-row gap-4 justify-center">
+            <input type="text" id="searchVideo" placeholder="🔍 Cari materi atau pembicara..." 
+                    class="flex-1 border rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-600 focus:border-transparent">
+            <select id="filterPembicara" class="border rounded-lg px-4 py-3 md:w-48 focus:ring-2 focus:ring-emerald-600">
+                <option value="">Semua Pembicara</option>
+                <option value="Ahmad Jufri Ubaid">Ahmad Jufri Ubaid, S.Ag.</option>
+                <option value="Chamim Tohari">Chamim Tohari, S.Ag.</option>
+                <option value="Wafi Marzuki">Wafi Marzuki Amar, PhD.</option>
+                <option value="Dr. Tjatjur">Dr. Tjatjur Prijambodo, M.Kes.</option>
+                <option value="Burhanuddin">Burhanuddin, S.Thl., MPd.H</option>
+                <option value="Qodiron Abddurrahim">Drs. Qodiron Abddurrahim</option>
+                <option value="Yunan Daris">Yunan Daris, M.Pd.I.</option>
+                <option value="Zulfitri Alfarisi">Zulfitri Alfarisi, S.T.</option>
+                <option value="Dr. Taufik Churahman">Dr. Taufik Churahman</option>
+                <option value="Ahmad Samsoni">Ahmad Samsoni, S.Ag., M.Pd.</option>
+                <option value="Hifni Solikhin">Hifni Solikhin, S.Ag., M.Pd.</option>
+            </select>
+        </div>
+
+        <div id="videoContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
+</section>
+
+<section class="hero-gradient text-white py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Jangan Lewatkan Kajian Minggu Depan</h2>
+        <p class="text-white/90 mb-8 text-lg">
+            Ikuti kajian langsung setiap minggunya di Masjid Al-Amin. Datang tepat waktu dan ajak teman serta keluarga.
+        </p>
+        <a href="index.html#kontak" class="bg-white text-emerald-700 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
+            📍 Lihat Lokasi & Kontak
+        </a>
+    </div>
+</section>
+
+<footer class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+        <div>
+            <img src="Picture/Logo.png" class="w-12 mb-4 rounded">
+            <p class="text-sm text-gray-700 leading-relaxed font-semibold">
+                <strong class="text-gray-900">Pimpinan Ranting Muhammadiyah</strong><br>
+                Desa Ngampelsari<br><br>
+                Jl. Kertomenanggal IV No.1<br>
+                Surabaya, Jawa Timur 60234<br>
+                <strong class="text-emerald-700">Telp: 031 8437191</strong>
+            </p>
+        </div>
+
+        <div>
+            <h4 class="font-bold text-gray-900 mb-4">Menu Utama</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+                <li class="hover:text-emerald-700 cursor-pointer transition">Home</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Profil</li>
+                <li class="text-emerald-700 font-semibold">Kajian & Dakwah</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Transparansi</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Kontak</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold text-gray-900 mb-4">Informasi</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+                <li class="hover:text-emerald-700 cursor-pointer transition">Jadwal Kajian</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Dokumentasi Video</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Pembicara Tamu</li>
+                <li class="hover:text-emerald-700 cursor-pointer transition">Hubungi Kami</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold text-gray-900 mb-4">Ikuti Kami</h4>
+            <div class="flex gap-5 text-2xl mb-6">
+                <i class="fab fa-facebook text-blue-600 hover:text-blue-800 cursor-pointer transition"></i>
+                <i class="fab fa-instagram text-pink-600 hover:text-pink-800 cursor-pointer transition"></i>
+                <i class="fab fa-youtube text-red-600 hover:text-red-800 cursor-pointer transition"></i>
+                <i class="fab fa-whatsapp text-green-600 hover:text-green-800 cursor-pointer transition"></i>
+            </div>
+            <p class="text-xs text-gray-600">Tetap terhubung dengan program kajian kami</p>
+        </div>
+    </div>
+
+    <div class="bg-gray-100 text-center py-6 text-sm text-gray-700 border-t border-gray-200">
+        <p>© 2025 Pimpinan Ranting Muhammadiyah Desa Ngampelsari</p>
+        <p class="mt-2">Developed by <a href="https://www.baraapidigital.com" class="text-emerald-700 hover:text-emerald-800 font-semibold transition">Bara Api Digital</a> | Website Islami Berkemajuan</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+// ================= DATA KAJIAN (HANYA DESEMBER 2025) ================= 
+const kajianDataDesember = [
+    {
+        hari: 'Senin',
+        tanggal: '1 Desember 2025',
+        pembicara: 'Ahmad Jufri Ubaid, S.Ag.',
+        materi: 'Arbain An-Nawi',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4', 
+        deskripsi: '40 Hadis Nawi - Kumpulan hadis pilihan yang mengandung ajaran lengkap Islam'
+    },
+    {
+        hari: 'Selasa',
+        tanggal: '2 Desember 2025',
+        pembicara: 'Chamim Tohari, S.Ag.',
+        materi: 'Tafsir Al-Qur\'an',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Penjelasan mendalam tentang ayat-ayat Al-Qur\'an dan penerapannya dalam kehidupan'
+    },
+    {
+        hari: 'Rabu',
+        tanggal: '3 Desember 2025',
+        pembicara: 'Wafi Marzuki Amar, PhD.',
+        materi: 'Al-Lu\'lu\' Wal Marjan',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Hadis-hadis sahih dari Shahih Al-Bukhari dan Shahih Muslim'
+    },
+    {
+        hari: 'Jumat',
+        tanggal: '5 Desember 2025',
+        pembicara: 'Dr. Tjatjur Prijambodo, M.Kes.',
+        materi: 'Islam & Kesehatan',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Perspektif Islam tentang kesehatan jasmani dan rohani'
+    },
+    {
+        hari: 'Ahad',
+        tanggal: '7 Desember 2025',
+        pembicara: 'Burhanuddin, S.Thl., MPd.H',
+        materi: 'P T R',
+        jam: '08:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Pendidikan Tauhid dan Rohani'
+    },
+    {
+        hari: 'Rabu',
+        tanggal: '10 Desember 2025',
+        pembicara: 'Drs. Qodiron Abddurrahim',
+        materi: 'Tematik',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Pembahasan tema-tema penting dalam Islam modern'
+    },
+    {
+        hari: 'Kamis',
+        tanggal: '11 Desember 2025',
+        pembicara: 'Yunan Daris, M.Pd.I.',
+        materi: 'Hadits-Hadits Akhir Zaman',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Kajian tentang tanda-tanda akhir zaman menurut hadis sahih'
+    },
+    {
+        hari: 'Senin',
+        tanggal: '15 Desember 2025',
+        pembicara: 'Ahmad Jufri Ubaid, S.Ag.',
+        materi: 'Adabul Mufrod',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Hadis-hadis tentang akhlak dan adab dalam Islam'
+    },
+    {
+        hari: 'Selasa',
+        tanggal: '16 Desember 2025',
+        pembicara: 'Chamim Tohari, S.Ag.',
+        materi: 'Tafsir Al-Qur\'an',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Lanjutan tafsir Al-Qur\'an dengan fokus pada surat-surat penting'
+    },
+    {
+        hari: 'Kamis',
+        tanggal: '18 Desember 2025',
+        pembicara: 'Zulfitri Alfarisi, S.T.',
+        materi: 'Tafsir Tematik',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Tafsir dengan pendekatan tematik sesuai konteks modern'
+    },
+    {
+        hari: 'Jumat',
+        tanggal: '19 Desember 2025',
+        pembicara: 'Dr. Taufik Churahman',
+        materi: 'Tematik',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Kajian tematik isu-isu kontemporer dalam perspektif Islam'
+    },
+    {
+        hari: 'Ahad',
+        tanggal: '21 Desember 2025',
+        pembicara: 'Ahmad Samsoni, S.Ag., M.Pd.',
+        materi: 'Tematik',
+        jam: '08:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Pembahasan tema-tema relevan untuk kehidupan sehari-hari'
+    },
+    // ENTRI BARU
+    {
+        hari: 'Senin',
+        tanggal: '22 Desember 2025',
+        pembicara: 'Dr. Taufik Churahman',
+        materi: 'Tematik',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Lanjutan kajian tematik'
+    },
+    {
+        hari: 'Rabu',
+        tanggal: '24 Desember 2025',
+        pembicara: 'Yunan Daris, M.Pd.I.',
+        materi: 'Bulughul Maram',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Kajian hadis-hadis hukum Islam'
+    },
+    {
+        hari: 'Kamis',
+        tanggal: '25 Desember 2025',
+        pembicara: 'Hifni Solikhin, S.Ag., M.Pd.',
+        materi: 'Tauhid',
+        jam: '20:00 WIB',
+        lokasi: 'Masjid Al-Amin',
+        videoFile: 'Picture/Kajian_1.mp4',
+        deskripsi: 'Membahas dasar-dasar keimanan dalam Islam'
+    }
+];
+
+
+function renderKajian() {
+    const kajian = kajianDataDesember;
+    const tbody = document.querySelector('#kajianContainer tbody');
+    const noJadwal = document.getElementById('noJadwal');
+    
+    tbody.innerHTML = ''; // Kosongkan isi tabel
+    noJadwal.classList.add('hidden');
+
+    if (kajian.length === 0) {
+        noJadwal.classList.remove('hidden');
+        return;
+    }
+
+    kajian.forEach((item, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td class="whitespace-nowrap text-lg font-semibold text-emerald-700">
+                <span class="text-sm block text-gray-500 font-medium">${item.hari},</span>
+                ${item.tanggal}
+                <span class="text-xs block text-gray-500 mt-1">(${item.jam})</span>
+            </td>
+            <td class="font-medium text-gray-900">
+                ${item.materi}
+            </td>
+            <td class="text-gray-700">
+                ${item.pembicara}
+            </td>
+            <td>
+                <button onclick="scrollToVideo('${item.videoFile}')" class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-emerald-100 transition whitespace-nowrap">
+                    Dokumentasi Video 
+                </button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+
+function renderVideos() {
+    // Karena kita hanya memiliki satu data bulan, kita ambil dari kajianDataDesember
+    const allVideos = kajianDataDesember; 
+
+    const container = document.getElementById('videoContainer');
+    const searchTerm = document.getElementById('searchVideo').value.toLowerCase();
+    const filterPembicara = document.getElementById('filterPembicara').value;
+
+    const filtered = allVideos.filter(video => {
+        const matchSearch = video.materi.toLowerCase().includes(searchTerm) || 
+                             video.pembicara.toLowerCase().includes(searchTerm);
+        const matchPembicara = !filterPembicara || video.pembicara.includes(filterPembicara);
+        return matchSearch && matchPembicara;
+    });
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<p class="col-span-3 text-center text-gray-500">Video dokumentasi tidak ditemukan.</p>';
+        return;
+    }
+
+    container.innerHTML = filtered.map((item, index) => `
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+            <div class="video-embed-container">
+                <video controls 
+                       preload="metadata" 
+                       class="w-full h-full object-cover">
+                    <source src="${item.videoFile}" type="video/mp4">
+                    Browser Anda tidak mendukung tag video.
+                </video>
+            </div>
+
+            <div class="p-6">
+                <p class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-bold inline-block mb-3">
+                    📚 ${item.materi}
+                </p>
+
+                <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    ${item.materi}
+                </h3>
+
+                <p class="text-sm text-gray-600 mb-3">
+                    <strong>Pembicara:</strong> ${item.pembicara}
+                </p>
+
+                <p class="text-sm text-gray-600 mb-4">
+                    <strong>Tanggal:</strong> ${item.tanggal}
+                </p>
+
+                <p class="text-xs text-gray-500 mb-4">
+                    ${item.deskripsi}
+                </p>
+                
+                <button onclick="document.querySelector('#videoContainer > div:nth-child(${index + 1}) video').play()"
+                    class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 rounded-lg text-center transition block">
+                    ▶ Play Video Sekarang
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function scrollToVideo(videoFile) {
+    // Logika scroll tetap berfungsi, memastikan view ke bagian video
+    document.getElementById('filterPembicara').value = '';
+    document.getElementById('searchVideo').value = '';
+    renderVideos();
+    document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Event listeners
+document.getElementById('searchVideo')?.addEventListener('keyup', renderVideos);
+document.getElementById('filterPembicara')?.addEventListener('change', renderVideos);
+
+// Initial render
+renderKajian();
+renderVideos();
+</script>
+
+</body>
+</html>
